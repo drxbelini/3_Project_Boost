@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2b0918e4094944183ef7a8d9502686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 90
+  rcsThrust: 120
   engThrust: 1200
   mainEngine: {fileID: 8300000, guid: 889d98405da40864e9ca01c7b9f425c2, type: 3}
   explosion: {fileID: 8300000, guid: 1994ae31a6e4aa4428a9c4ea836d0693, type: 3}
