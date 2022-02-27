@@ -21,12 +21,18 @@ public class Rocket : MonoBehaviour
     AudioSource audioSource;
 
     bool isTranscending = false;
-    
-     
-	void Start ()
+
+    Gyroscope m_Gyro;
+
+
+    void Start ()
     {
         rigidBody = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();        
+        audioSource = GetComponent<AudioSource>();
+
+        //Set up and enable the gyroscope (check your device has one)
+        m_Gyro = Input.gyro;
+        m_Gyro.enabled = true;
     }
 
 
@@ -107,6 +113,8 @@ public class Rocket : MonoBehaviour
         { 
         RespondTheBug();
         }
+
+        Debug.Log(m_Gyro.rotationRate.x);
     }
 
 
@@ -127,6 +135,10 @@ public class Rocket : MonoBehaviour
     private void RespondThrustImput()
     {
         if (Input.GetKey(KeyCode.Space))//When space is pessed vector3 get UP force. And engine sound FX start play. And need State to be Alive for works
+        {
+            ApllyThrust();
+        }
+        else if (Input.touchCount > 0)
         {
             ApllyThrust();
         }
@@ -166,7 +178,10 @@ public class Rocket : MonoBehaviour
         else if (Input.GetKey(KeyCode.D))
         {
            ManualRotation(-Time.deltaTime * rcsThrust);
-        }                   
+        }
+
+        GetGyroRotation(Time.deltaTime * rcsThrust);
+        
     }
 
     private void ManualRotation(float calculateRotation)
@@ -176,6 +191,12 @@ public class Rocket : MonoBehaviour
         rigidBody.freezeRotation = false;
     }
 
+    private void GetGyroRotation(float calculateRotation)
+    {
+        rigidBody.freezeRotation = true;
+        transform.Rotate(Vector3.forward * m_Gyro.rotationRate.z * calculateRotation);
+        rigidBody.freezeRotation = false;
+    }
 
 
 }
