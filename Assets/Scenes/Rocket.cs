@@ -114,7 +114,7 @@ public class Rocket : MonoBehaviour
         RespondTheBug();
         }
 
-        Debug.Log(m_Gyro.rotationRate.x);
+        //Debug.Log(m_Gyro.rotationRate.x);
     }
 
 

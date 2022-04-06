@@ -1,0 +1,39 @@
+TILT ROCKET
+
+Avoid colid whit obstcles.
+Go to landing pad A to B
+
+CONTROLE
+Touch the screen to bust the rocket.
+Tilt the screen do turn the rocket.
+
+
+OPTIONS MENUS
+Sensitivity of the tilt
+Stir camera moviment
+
+LEVEL PROGRESSING
+Word 1
+    level 1
+    level 2
+    level 3
+    level 4
+    level 5
+Word 2
+    level 1
+    level 2
+    level 3
+    level 4
+    level 5
+Word 3
+    level 1
+    level 2
+    level 3
+    level 4
+    level 5
+Word 4
+    level 1
+    level 2
+    level 3
+    level 4
+    level 5
